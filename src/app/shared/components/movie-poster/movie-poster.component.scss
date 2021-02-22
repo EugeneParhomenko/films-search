@@ -1,0 +1,94 @@
+:host {
+    flex-basis: 50%;
+    padding: 0 15px 30px;
+    align-self: stretch;
+
+    .movie-poster {
+        height: 100%;
+        box-shadow: 0px 0px 0px 0px rgb(43 94 228 / 13%), 0px 0px 32px -9px rgb(43 94 228 / 13%);
+        background: #fff;
+        border-radius: 15px;
+        padding: 10px 10px 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        overflow: hidden;
+        position: relative;
+        transform: translate(0px, 0px);
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 2px 2px 0px 0px rgb(43 94 228 / 30%), 0px 2px 32px -9px rgb(43 94 228 / 30%);
+        }
+
+        .movie-img {
+            width: calc(100% + 20px);
+            height: 370px;
+            background-size: cover;
+            background-position: center;
+            margin: -10px -10px 15px;
+            border-radius: 15px;
+
+            &.no-poster {
+                background: #eee;
+                position: relative;
+
+                &:before {
+                    content: "No poster";
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    width: fit-content;
+                    height: fit-content;
+                    color: #3333332e;
+                    font-size: 22px;
+                    text-transform: uppercase;
+                    font-weight: 800;
+                }
+            }
+        }
+
+        .movie-title {
+            width: 100%;
+            font-size: 18px;
+            font-weight: 600;
+            color: #444;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .poster-bottom {
+            display: flex;
+            flex-direction: revert;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            position: absolute;
+            bottom: 8px;
+            left: 0;
+            padding: 0 15px;
+
+            .type {
+                background: #8eadfe;
+                color: #fff;
+                padding: 4px;
+                font-size: 14px;
+                font-weight: 400;
+                text-transform: capitalize;
+                line-height: 1;
+                border-radius: 5px;
+            }
+
+            .year {
+                color: #333;
+                font-weight: 300;
+                font-size: 14px;
+            }
+        }
+    }
+}

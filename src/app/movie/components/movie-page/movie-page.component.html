@@ -1,0 +1,43 @@
+<ng-container *ngIf="!(loading$ | async) && movie">
+  <div class="result-body">
+    <h1 class="result-header">{{ movie.title }} ({{ movie.year }})</h1>
+    <div class="result-page-wrapper">
+      <div class="result-poster">
+        <div
+          class="movie-img"
+          [class.no-poster]="movie.poster === 'N/A'"
+          [style.backgroundImage]="movie.poster !== 'N/A' ? 'url(' + movie.poster + ' )' : ''"
+        ></div>
+        <ng-container *ngIf="movie.ratings.length">
+          <h3>Ratings:</h3>
+          <ul class="info-list">
+            <li *ngFor="let rate of movie.ratings">
+              {{ rate.source }}: <span>{{ rate.value }}</span>
+            </li>
+          </ul>
+        </ng-container>
+      </div>
+      <div class="result-info">
+        <h3>Description: </h3>
+        <div class="text">{{ movie.plot }}</div>
+        <h3>Information:</h3>
+        <ul class="info-list">
+          <li><span>Language:</span> {{ movie.language }}</li>
+          <li><span>Country:</span> {{ movie.country }}</li>
+          <li><span>Runtime:</span> {{ movie.runtime }}</li>
+          <li><span>Released:</span> {{ movie.released }}</li>
+          <li><span>Actors:</span> {{ movie.actors }}</li>
+          <li><span>Director:</span> {{ movie.director }}</li>
+          <li><span>Writer:</span> {{ movie.writer }}</li>
+          <li><span>Box Office:</span> {{ movie.boxOffice }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="result-footer">
+      <a class="search-again" [routerLink]="['/search']">New search</a>
+    </div>
+  </div>
+</ng-container>
+<ng-container *ngIf="(loading$ | async) || !movie">
+  <app-loader></app-loader>
+</ng-container>

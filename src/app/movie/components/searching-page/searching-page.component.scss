@@ -1,0 +1,28 @@
+.searching-page-wrapper {
+    display: block;
+    max-width: 630px;
+    padding: 0 15px;
+    margin: 0 auto 0;
+
+    .searching-page-header {
+        margin: 0 0 70px;
+    }
+
+    .searching-page-body {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: stretch;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+
+        .searching-failure {
+            margin: 140px 0 0;
+            font-size: 30px;
+            color: #878787;
+            text-align: center;
+            font-weight: 300;
+            width: 100%;
+        }
+    }
+}

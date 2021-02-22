@@ -1,0 +1,14 @@
+
+<div class="movie-poster">
+  <a
+    class="movie-img"
+    [routerLink]="['/result/', movie.imdbID]"
+    [class.no-poster]="movie.poster === 'N/A'"
+    [style.backgroundImage]="movie.poster !== 'N/A' ? 'url(' + movie.poster + ' )' : ''"
+  ></a>
+  <a class="movie-title" [routerLink]="['/result/', movie.imdbID]">{{ movie.title }}</a>
+  <div class="poster-bottom">
+    <div *ngIf="movie.type" class="type">{{ movie.type }}</div>
+    <div *ngIf="movie.year" class="year">{{ movie.year }}</div>
+  </div>
+</div>

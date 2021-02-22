@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #333;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #d7e2f4, #f2f6ff);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.top-bar-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 15px 0;
+    margin: 0 0 40px;
+
+    .site-logo {
+        font-family: 'Bebas Neue', cursive;
+        font-size: 40px;
+        color: #3c6be7;
+    }
+}

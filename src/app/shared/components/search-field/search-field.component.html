@@ -1,0 +1,19 @@
+<div class="search-field-wrapper">
+  <input 
+    type="text"
+    placeholder="Search"
+    name="search"
+    [(ngModel)]="value"
+    autocorrect="off"
+    autocapitalize="off"
+    spellcheck="off"
+    autocomplete="off"
+    (keyup.enter)="searchAction()"
+  >
+  <button
+    type="button"
+    (click)="searchAction()"
+  >
+    <fa-icon [icon]="faSearch"></fa-icon>
+  </button>
+</div>

@@ -1,0 +1,23 @@
+<div class="searching-page-wrapper">
+  <div class="searching-page-header">
+    <app-search-field (search)="search($event)"></app-search-field>
+  </div>
+  <ng-container *ngIf="!(loading$ | async)">
+    <div class="searching-page-body">
+      <ng-container *ngIf="searchingResults">
+        <ng-container *ngIf="searchingResults.response === 'True'">
+          <app-movie-poster *ngFor="let movie of searchingResults.search" [movie]="movie"></app-movie-poster>
+        </ng-container>
+        <ng-container *ngIf="searchingResults.response === 'False'">
+          <div class="searching-failure">{{ searchingResults.error }}</div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="loading$ | async">
+    <app-loader></app-loader>
+  </ng-container>
+  <ng-container *ngIf="totalPages && totalPages > 1 && !(loading$ | async)">
+    <app-pagination [total]="totalPages" [active]="request.page" (pageChanged)="search(request.title, $event)"></app-pagination>
+  </ng-container>
+</div>
